@@ -41,7 +41,19 @@ export const resolvers = {
             });
 
             return Dinosaur;
+        },
 
+        deleteDinosaur: async (_root:unknown, args:{id:string}, context: {DinosaurCollection: Collection<DinosaurModel>}): Promise<Dinosaur | null> => {
+
+            const dinosaurDB = await context.DinosaurCollection.findOneAndDelete({
+                _id: new ObjectId(args.id),
+            });
+
+            if(!dinosaurDB) return null;
+
+            const Dinosaur = fromModelToDinosaur(dinosaurDB);
+
+            return Dinosaur;
         }
     },
 }
