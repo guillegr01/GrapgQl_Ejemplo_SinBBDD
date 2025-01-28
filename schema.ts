@@ -11,4 +11,9 @@ export const typeDefs = `#graphql
         dinosaur(id:ID!): Dinosaur
     }
 
+    type Mutation {
+        addDinosaur(name:String!, type:String!): Dinosaur!
+        deleteDinosaur(id:ID!): Dinosaur
+    }
+
 `;

@@ -23,4 +23,25 @@ export const resolvers = {
             return DinosaurById;
         },
     },
+
+    Mutation: {
+        addDinosaur: async (_root:unknown, args: {name:string, type:string}, context: {DinosaurCollection: Collection<DinosaurModel>}): Promise<Dinosaur | null> => {
+
+            const { name,type } = args;
+
+            const { insertedId } = await context.DinosaurCollection.insertOne({
+                name,
+                type,
+            });
+
+            const Dinosaur = fromModelToDinosaur({
+                _id: insertedId,
+                name,
+                type
+            });
+
+            return Dinosaur;
+
+        }
+    },
 }
