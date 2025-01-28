@@ -8,7 +8,7 @@ import { resolvers } from "./resolvers.ts"
 const MONGO_URL = Deno.env.get("MONGO_URL");
 
 if (!MONGO_URL) {
-  throw Error("Please enter a valid MONGO_URL");
+  throw new Error("Please enter a valid MONGO_URL");
 }
 console.info("Connected succesfully to DDBB");
 const client = new MongoClient(MONGO_URL);
