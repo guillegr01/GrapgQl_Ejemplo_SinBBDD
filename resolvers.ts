@@ -21,6 +21,6 @@ export const resolvers = {
 
             const DinosaurById = fromModelToDinosaur(DinosaurDbById);
             return DinosaurById;
-        }
-    }
+        },
+    },
 }

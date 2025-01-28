@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb"
 import { ApolloServer } from "npm:@apollo/server"
 import { startStandaloneServer } from "npm:@apollo/server/standalone"
-import {DinosaurModel} from "./types.ts"
+import { DinosaurModel } from "./types.ts"
 import { typeDefs } from "./schema.ts"
 import { resolvers } from "./resolvers.ts"
 
