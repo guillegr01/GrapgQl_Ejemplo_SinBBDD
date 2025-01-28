@@ -22,8 +22,8 @@ const server = new ApolloServer({
   resolvers
 });
 
-const { url } = await startStandaloneServer(server, {
-  context: async() => ({DinosaurCollection}),
+const {url} = await startStandaloneServer(server, {
+  context: async () => ({DinosaurCollection}),
 });
 
-console.log('Server running at: ${url}');
+console.log(`Server running at: ${url}`);
